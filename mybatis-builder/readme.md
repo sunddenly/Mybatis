@@ -43,12 +43,12 @@
 　1.1 创建表和数据：teacher/class  
 　1.2 定义实体类：Classes,Teacher  
 　1.3 定义sql映射文件：ClassMapper.xml  
-　1.4 进行dao层的测试
+　1.4 进行dao层的测试  
 **2. 一对多关联[collection]：**根据classId查询对应的班级信息,包括学生,老师  
 　2.1 创建表和数据：student  
 　2.2 定义实体类：Student  
 　2.3 定义sql映射文件：ClassMapper.xml  
-　2.4 进行dao层的测试
+　2.4 进行dao层的测试  
 **3. 关联方式**  
 　3.1 嵌套结果：使用`嵌套结果映射`来处理`重复的联合结果的子集`,封装联表查询的数据,去除重复的数据  
 　3.2 嵌套查询：通过执行另外一个SQL映射语句,来返回预期的复杂类型    
@@ -81,11 +81,11 @@ foreach()
 二级缓存与一级缓存其机制相同，默认也是采用 PerpetualCache，HashMap存储，不同在于其存储作用域为 Mapper(Namespace)，并且可自定义存储源，如 Ehcache。  
 **3. 缓存机制**
 对于缓存数据更新机制，当某一个作用域(一级缓存Session/二级缓存Namespaces)的进行了 C/U/D 操作后，默认该作用域下所有 select 中的缓存将被clear。  
-　3.1 映射语句文件中的所有select语句将会被缓存。 
-　3.2 映射语句文件中的所有insert，update和delete语句会刷新缓存。 
-　3.3 缓存会使用Least Recently Used（LRU，最近最少使用的）算法来收回。 
-　3.4 缓存会根据指定的时间间隔来刷新。 
-　3.5 缓存会存储1024个对象
+　3.1 映射语句文件中的所有select语句将会被缓存。  
+　3.2 映射语句文件中的所有insert，update和delete语句会刷新缓存。   
+　3.3 缓存会使用Least Recently Used（LRU，最近最少使用的）算法来收回。   
+　3.4 缓存会根据指定的时间间隔来刷新。   
+　3.5 缓存会存储1024个对象  
 ``` xml
 <cache eviction="FIFO"  //回收策略为先进先出
        flushInterval="60000" //自动刷新时间60s
@@ -94,7 +94,7 @@ foreach()
 ```
 
 #### Mybatis 一级缓存
-**0. 作用：**以session为单元，默认开启一级缓存
+**0. 作用：**以session为单元，默认开启一级缓存  
 **1.提出需求：**根据id查询对应的用户记录对象  
 **2.准备数据库表和数据：**c_user  
 **3.创建表的实体类：**User  
